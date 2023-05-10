@@ -27,15 +27,15 @@ extension AlertF {
             AlertButton { action?() } label: { text }
         }
         
-        static func done(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
+        public static func done(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
             AlertF.Button(text: text, buttonType: .done, action: action)
         }
         
-        static func cancel(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
+        public static func cancel(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
             AlertF.Button(text: text, buttonType: .cancel, action: action)
         }
         
-        static func destructive(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
+        public static func destructive(text: Text, action: (() -> Void)? = {}) -> AlertF.Button {
             AlertF.Button(text: text, buttonType: .destructive, action: action)
         }
     }
