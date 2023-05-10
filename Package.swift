@@ -5,11 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "Resource",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "Resource",
-            targets: ["Resource"]),
+            .library(name: "AlertF", targets: ["AlertF"]),
+        .library(name: "NetworkF", targets: ["NetworkF"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -18,11 +18,15 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "Resource",
-            dependencies: []),
-        .testTarget(
-            name: "ResourceTests",
-            dependencies: ["Resource"]),
+        
+            .target(name: "AlertF"),
+        .target(name: "NetworkF"),
+            
+                .testTarget(
+                    name: "AlertFTests",
+                    dependencies: ["AlertF"]),
+            .testTarget(
+                name: "NetworkFTests",
+                dependencies: ["NetworkF"]),
     ]
 )
